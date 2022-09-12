@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLE CATALOG</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'css/table-style.css'%}">
+    <link rel="stylesheet" href="table-style.css">
+</head>
+<body>
+    <table class="table">
+      <caption>CUSTOMERS</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">BIRTHDAY</th>
+            <th scope="col">ADDRESS</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          {% for custom in customer %}
+          <tr>
+            <th scope="row">{{custom.cus_id}}</th>
+            <td>{{custom.name}}</td>
+            <td>{{custom.birthday}}</td>
+            <td>{{custom.addreas}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <table class="table">
+        <caption>SPOTS</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#spot</th>
+            <th scope="col">NAME</th>
+            <th scope="col">loc_id</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for custom in spot %}
+          <tr>
+            <th scope="row">{{custom.spot_id}}</th>
+            <td>{{custom.spot_name}}</td>
+            <td>{{custom.loc_id}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    
+      <table class="table">
+        <caption>GUIDE</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#guide_id</th>
+            <th scope="col">name</th>
+            <th scope="col">phone</th>
+            <th scope="col">region</th>
+            <th scope="col">address</th>
+            <th scope="col">booking</th>
+          </tr>
+        </thead>
+          <tbody>
+            {% for obj in guide %}
+            <tr>
+              <th scope="row"> {{obj.guide_id}} </th>
+              <td>{{obj.name}}</td>
+              <td>{{obj.phone}}</td>
+              <td>{{obj.region}}</td>
+              <td>{{obj.address}}</td>
+              <td>{{obj.booking}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+    
+      <table class="table">
+        <caption>LOCATION</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#loc_id</th>
+            <th scope="col">NAME</th>
+            
+          </tr>
+        </thead>
+          <tbody>
+            {% for obj in loc %}
+            <tr>
+              <th scope="row">{{obj.loc_id}}</th>
+              <td>{{obj.loc_name}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+    
+      <table class="table">
+        <caption>TOUR</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#Tour_id</th>
+            <th scope="col">#cus_id</th>
+            <th scope="col">#loc_id</th>
+            <th scope="col">#date</th>
+            <th scope="col">#days</th>
+
+          
+          </tr>
+        </thead>
+          <tbody>
+            {% for obj in tour %}
+            <tr>
+              <th scope="row">{{obj.tour_id}}</th>
+              <td>{{obj.cus_id}}</td>
+              <td>{{obj.loc_id}}</td>
+              <td>{{obj.date}}</td>
+              <td>{{obj.days}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+      <table class="table">
+        <caption>MODEL</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#model_id</th>
+            <th scope="col">model</th>
+            <th scope="col">company</th>
+            <th scope="col">rent</th>
+            <th scope="col">capacity</th>
+
+          
+          </tr>
+        </thead>
+          <tbody>
+            {% for obj in model %}
+            <tr>
+              <th scope="row">{{obj.model_id}}</th>
+              <td>{{obj.model}}</td>
+              <td>{{obj.company}}</td>
+              <td>{{obj.rent}}</td>
+              <td>{{obj.capacity}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+      <table class="table">
+        <caption>CAR</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#car_id</th>
+            <th scope="col">#model_id</th>
+            <th scope="col">purchase</th>
+           
+          </tr>
+        </thead>
+          <tbody>
+            {% for obj in car %}
+            <tr>
+              <th scope="row">{{obj.car_id}}</th>
+              <td>{{obj.model_id}}</td>
+              <td>{{obj.purchase}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+    
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    margin: 50px;
+    background-color: #a6acaf;
+}
+table {
+    margin: 50px 0px;
+    padding: 20px;
+    border:1px black solid;
+    border-radius: 20px;
+    box-shadow: 5px 5px #cacfd2;
+}
+th {
+    padding:0 50px;
+}
+td {
+    padding:0 50px;
+}
